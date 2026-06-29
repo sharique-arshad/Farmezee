@@ -75,7 +75,7 @@ The Home Receiver displays live sensor readings on an OLED display, allows crop 
 ## Field Node
 
 <p align="center">
-<img src="images/field_node.jpg" width="70%">
+<img src="images/field_node.jpeg" width="70%">
 </p>
 
 **Features**
@@ -92,7 +92,7 @@ The Home Receiver displays live sensor readings on an OLED display, allows crop 
 ## Home Receiver
 
 <p align="center">
-<img src="images/home_receiver.jpg" width="60%">
+<img src="images/home_receiver.jpeg" width="60%">
 </p>
 
 **Features**
