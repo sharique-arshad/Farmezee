@@ -1,7 +1,7 @@
 # 🌱 Farmezee
 
 <p align="center">
-  <img src="H:\Downloads\banner.png" alt="Farmezee Banner" width="100%">
+  <img src="images/banner.png" width="100%">
 </p>
 
 <p align="center">
@@ -55,7 +55,7 @@ Unlike conventional IoT irrigation systems that depend on Wi-Fi or cellular netw
 # 🏗 System Architecture
 
 <p align="center">
-<img src="H:\Downloads\system_architecture.png" width="95%">
+<img src="images/system_architecture.png" width="95%">
 </p>
 
 The system is divided into two intelligent nodes connected using LoRa wireless communication.
@@ -75,7 +75,7 @@ The Home Receiver displays live sensor readings on an OLED display, allows crop 
 ## Field Node
 
 <p align="center">
-<img src="H:\Downloads\field_node.jpeg" width="70%">
+<img src="images/field_node.jpg" width="70%">
 </p>
 
 **Features**
@@ -92,7 +92,7 @@ The Home Receiver displays live sensor readings on an OLED display, allows crop 
 ## Home Receiver
 
 <p align="center">
-<img src="H:\Downloads\home_receiver.jpeg" width="60%">
+<img src="images/home_receiver.jpg" width="60%">
 </p>
 
 **Features**
@@ -216,7 +216,7 @@ The ESP32 uploads environmental data to the Blynk Cloud, enabling users to monit
 - Remote Monitoring
 
 <p align="center">
-<img src="H:\Downloads\Blynk Dashboard.png" width="95%">
+<img src="images/Blynk Dashboard.png" width="95%">
 </p>
 # 🚀 Future Improvements
 
