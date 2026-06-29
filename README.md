@@ -1,80 +1,245 @@
-# Farmezee
-This is the code for my 2025 Hackathon project. It's a complete IoT solution for smart farming that uses two ESP32s to communicate over LoRa. It monitors weather and soil conditions and sends data to a Blynk dashboard.
----
+# 🌱 Farmezee
 
-## 📋 Features
+<p align="center">
+  <img src=""H:\Downloads\banner.png"" alt="Farmezee Banner" width="100%">
+</p>
 
-* **Long-Range Communication:** Uses LoRa (868.5 MHz) for a reliable, long-distance link between the sensor station and the base station.
-* **Full Weather Monitoring:** The transmitter node reads:
-    * Temperature (BME280)
-    * Humidity (BME280)
-    * Barometric Pressure (BME280)
-    * Soil Moisture
-    * Rain Detection
-    * Air Quality (MQ-series sensor)
-* **Smart Base Station:** The receiver node:
-    * Connects to WiFi to upload all data to the **Blynk Cloud**.
-    * Displays all data on a 20x4 I2C LCD.
-    * Allows user to select a crop (Rice, Wheat, Maize) via push buttons.
-    * Provides **crop-specific alerts** (buzzer and Blynk notification) if soil is too dry for the selected crop.
-    * Provides rain alerts.
-* **Blynk Dashboard:** A mobile and web dashboard shows all sensor data in real-time and stores historical data.
+<p align="center">
+
+![ESP32](https://img.shields.io/badge/ESP32-IoT-red)
+![LoRa](https://img.shields.io/badge/Communication-LoRa-blue)
+![Arduino](https://img.shields.io/badge/Platform-Arduino-success)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![Open Source](https://img.shields.io/badge/Open%20Source-Yes-success)
+
+</p>
 
 ---
 
-## 🛠️ Hardware
+# Smart Solar-Powered LoRa Weather Monitoring & Intelligent Irrigation System
 
-### Transmitter Station
-* ESP32
-* LoRa Module (AT-command based, e.g., Reyax RYLR896)
-* BME280 (I2C)
-* Soil Moisture Sensor (Analog)
-* Rain Sensor (Digital)
-* MQ-series Gas Sensor (Analog)
-* Power source (e.g., battery pack)
+**Farmezee** is a compact IoT-based precision agriculture system that combines long-range LoRa communication, weather monitoring, and intelligent irrigation into a single solution.
 
-### Receiver Station
-* ESP32
-* LoRa Module (AT-command based)
-* 20x4 I2C LCD Display
-* 4x Push Buttons (for Rice, Wheat, Maize, Manual)
-* Buzzer
-* Resistors
+The project consists of two independent ESP32-based devices:
+
+* 🌾 **Field Node** – Installed in the farm to monitor environmental conditions and control irrigation.
+* 🏠 **Home Receiver** – Installed at the farmer's home for real-time monitoring, crop selection, manual irrigation, and voice alerts.
+
+Unlike conventional IoT irrigation systems that depend on Wi-Fi or cellular networks, Farmezee uses **LoRa technology** for reliable long-distance communication with extremely low power consumption, making it suitable for remote agricultural fields.
 
 ---
 
-## 💻 Software & Libraries
+# ✨ Features
 
-* [Arduino IDE](https://www.arduino.cc/en/software)
-* [Blynk Library](https://github.com/blynkkk/blynk-library)
-* [Adafruit BME280 Library](https://github.com/adafruit/Adafruit_BME280_Library)
-* [LiquidCrystal_I2C Library](https://github.com/johnrickman/LiquidCrystal_I2C)
+* 🌞 Solar Powered Field Node
+* 📡 Long-Range LoRa Communication
+* 🌡 Temperature Monitoring
+* 💧 Humidity Monitoring
+* 🌱 Soil Moisture Detection
+* 🌧 Rain Detection
+* 🌬 Air Quality Monitoring
+* 🚰 Automatic Irrigation
+* 🎛 Manual Irrigation
+* 🌾 Crop-Based Irrigation Logic
+* 🔊 Voice Alerts
+* 📺 OLED Display
+* 🔋 Battery Powered
+* ⚡ Low Power Design
+* ☁️ Cloud Monitoring (Blynk IoT)
+* 📱 Remote Dashboard
+* 📊 Live Sensor Visualization
 
 ---
 
-## ⚙️ How to Use
+# 🏗 System Architecture
 
-1.  **Blynk Setup:**
-    * Create a new Blynk project.
-    * In the receiver code, update these lines with your credentials:
-        ```cpp
-        #define BLYNK_TEMPLATE_ID "..."
-        #define BLYNK_TEMPLATE_NAME "..."
-        #define BLYNK_AUTH_TOKEN "..."
-        char ssid[] = "...";
-        char pass[] = "...";
-        ```
-    * Set up Datastreams in Blynk for V0-V6.
+<p align="center">
+<img src="H:\Downloads\system_architecture.png" width="95%">
+</p>
 
-2.  **Transmitter:** Upload the `base_transceiver.ino` code to the first ESP32.
-3.  **Receiver:** Upload the `receiver_station.ino` code to the second ESP32.
-4.  **Run:** Power on the transmitter, then the receiver. The receiver will connect to WiFi and start sending data to Blynk.
+The system is divided into two intelligent nodes connected using LoRa wireless communication.
 
+### 🌾 Field Node
 
+The Field Node continuously monitors environmental conditions using multiple sensors. The ESP32 processes the sensor data and decides whether irrigation is required based on the selected crop profile. The processed data is then transmitted to the Home Receiver through LoRa.
 
-##🔌Hardware Image
-![hardware](https://github.com/user-attachments/assets/00e62e39-b8cc-4492-967c-fe6889c74a0e)
+### 🏠 Home Receiver
 
-   
+The Home Receiver displays live sensor readings on an OLED display, allows crop selection, supports manual irrigation, and provides audio alerts using a DFPlayer Mini and speaker.
 
+---
 
+# 📸 Project Gallery
+
+## Field Node
+
+<p align="center">
+<img src="H:\Downloads\field_node.jpeg" width="70%">
+</p>
+
+**Features**
+
+* Solar Powered
+* 3D Printed Enclosure
+* Weather Monitoring
+* Automatic Irrigation
+* Integrated Pump
+* Long Range LoRa Communication
+
+---
+
+## Home Receiver
+
+<p align="center">
+<img src="H:\Downloads\home_receiver.jpeg" width="60%">
+</p>
+
+**Features**
+
+* Compact Portable Design
+* OLED Display
+* LoRa Receiver
+* Voice Alerts
+* Crop Selection
+* Manual Irrigation
+  
+
+---
+
+# ⚙ Hardware Components
+
+## Field Node
+
+| Component            | Purpose                          |
+| -------------------- | -------------------------------- |
+| ESP32                | Main Controller                  |
+| RYLR998 LoRa Module  | Wireless Communication           |
+| BME280               | Temperature, Humidity & Pressure |
+| Soil Moisture Sensor | Soil Monitoring                  |
+| Rain Sensor          | Rain Detection                   |
+| MQ135                | Air Quality Monitoring           |
+| IRF520 Driver        | Pump Driver                      |
+| Water Pump           | Irrigation                       |
+| Solar Panel          | Power Generation                 |
+| Li-ion Battery       | Backup Power                     |
+| TP4056               | Battery Charging                 |
+| MT3608               | Boost Converter                  |
+
+---
+
+## Home Receiver
+
+| Component           | Purpose                |
+| ------------------- | ---------------------- |
+| ESP32               | Main Controller        |
+| OLED Display        | User Interface         |
+| RYLR998 LoRa Module | Wireless Communication |
+| DFPlayer Mini       | Voice Alerts           |
+| Speaker             | Audio Output           |
+| Push Buttons        | Crop Selection         |
+| Manual Button       | Pump Control           |
+| Buzzer              | Alert System           |
+
+---
+
+# 🔄 Working Principle
+
+1. The Field Node continuously measures environmental conditions.
+
+2. The ESP32 processes sensor readings.
+
+3. Data is transmitted through LoRa.
+
+4. The Home Receiver receives live data.
+
+5. Sensor values are displayed on the OLED display.
+
+6. Audio alerts notify the farmer about important events.
+
+7. Irrigation is controlled automatically or manually.
+
+---
+                    FARMEZEE
+
+                 ┌─────────────┐
+                 │ Field Node  │
+                 │ ESP32       │
+                 └──────┬──────┘
+                        │
+         ┌──────────────┴──────────────┐
+         │                             │
+      LoRa                         Wi-Fi
+         │                             │
+         ▼                             ▼
+ Home Receiver                 Blynk Cloud
+   (OLED)                          │
+                                   ▼
+                         Mobile App / Dashboard
+                         
+# 📂 Repository Structure
+
+```text
+Farmezee
+│
+├── firmware/
+│   ├── field_node/
+│   └── home_receiver/
+│
+├── hardware/
+│
+├── images/
+│
+├── docs/
+│
+├── README.md
+│
+└── LICENSE
+```
+
+---
+# ☁️ Cloud Integration
+
+Farmezee also supports cloud-based monitoring using the **Blynk IoT Platform**.
+
+The ESP32 uploads environmental data to the Blynk Cloud, enabling users to monitor field conditions remotely through a web dashboard or mobile application.
+
+### Dashboard Features
+
+- Live Temperature
+- Humidity
+- Barometric Pressure
+- Soil Moisture
+- Rain Detection
+- Pump Status
+- Alarm Status
+- Remote Monitoring
+
+<p align="center">
+<img src="H:\Downloads\Blynk Dashboard.png" width="95%">
+</p>
+# 🚀 Future Improvements
+
+* PCB Version
+* Mobile Application
+* MQTT Integration
+* OTA Firmware Updates
+* AI-Based Irrigation Prediction
+* Weather Forecast Integration
+* IP65 Waterproof Enclosure
+
+---
+
+# 👨‍💻 Author
+
+**Mohammad Sharique Arsahad**
+
+Electronics & Communication Engineering
+
+Focused on Embedded Systems, IoT, PCB Design and Intelligent Automation.
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
