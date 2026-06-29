@@ -172,30 +172,12 @@ The Home Receiver displays live sensor readings on an OLED display, allows crop 
       LoRa                         Wi-Fi
          │                             │
          ▼                             ▼
- Home Receiver                 Blynk Cloud
-   (OLED)                          │
-                                   ▼
-                         Mobile App / Dashboard
+     Home Receiver                 Blynk Cloud
+     (OLED)                            │
+                                       ▼
+                             Mobile App / Dashboard
                          
-# 📂 Repository Structure
 
-```text
-Farmezee
-│
-├── firmware/
-│   ├── field_node/
-│   └── home_receiver/
-│
-├── hardware/
-│
-├── images/
-│
-├── docs/
-│
-├── README.md
-│
-└── LICENSE
-```
 
 ---
 # ☁️ Cloud Integration
