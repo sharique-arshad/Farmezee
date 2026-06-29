@@ -1,7 +1,7 @@
 # 🌱 Farmezee
 
 <p align="center">
-  <img src=""H:\Downloads\banner.png"" alt="Farmezee Banner" width="100%">
+  <img src="H:\Downloads\banner.png" alt="Farmezee Banner" width="100%">
 </p>
 
 <p align="center">
